@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\indexController;
+use App\Http\Controllers\linkController;
+use App\Http\Controllers\useController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,16 +16,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+//   Route::get('/', function () {
+//       return view('welcome');
+//   });
 
-Route::get('/',[\App\Http\Controller\indexController::class,'index']);
-Route::get('/redirect',[\App\Http\Controller\indexController::class,'redirect']);
-Route::get('/contact',[\App\Http\Controller\indexController::class,'contact']);
+Route::get('/',[indexController::class,'index']);
+Route::get('/redirect',[indexController::class,'redirect']);
+Route::get('/contact',[indexController::class,'contact']);
 
-Route::get('/register',[\App\Http\Controller\indexController::class,'register']);
-Route::get('/recover',[\App\Http\Controller\indexController::class,'recover']);
-Route::get('/login',[\App\Http\Controller\indexController::class,'login']);
-Route::get('/logout',[\App\Http\Controller\indexController::class,'logout']);
+Route::get('/register',[userController::class,'register']);
+Route::get('/recover',[userController::class,'recover']);
+Route::get('/login',[userController::class,'login']);
+Route::get('/logout',[userController::class,'logout']);
 
+Route::prefix('app')->group(function(){
+    Route::get('/generate',[linkController::class,'generate']);
+    Route::get('/remove',[linkController::class,'remove']);
+    Route::get('/list',[linkController::class,'list']);
+});
