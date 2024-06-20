@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\linkController;
-use App\Http\Controllers\useController;
+use App\Http\Controllers\userController;
 
 /*
 |--------------------------------------------------------------------------
