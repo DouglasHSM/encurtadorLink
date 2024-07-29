@@ -1,1 +1,8 @@
-<h1>view list</h1>
+@extends('layouts.navbar')
+
+@section('titulo', 'List')
+
+
+@section('conteudo')
+
+@endsection

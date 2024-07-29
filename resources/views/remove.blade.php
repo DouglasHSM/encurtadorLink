@@ -1,1 +1,8 @@
-<h1>view remove</h1>
+@extends('layouts.navbar')
+
+@section('titulo', 'remover')
+
+
+@section('conteudo')
+
+@endsection

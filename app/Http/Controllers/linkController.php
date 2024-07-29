@@ -13,4 +13,8 @@ class linkController extends Controller
     public function remove(){
         return view('remove');
     }
+
+    public function list(){
+        return view('list');
+    }
 }
